@@ -1,0 +1,3 @@
+ICA 3
+
+1. It would be 833.33 milliseconds worth of data.
