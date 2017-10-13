@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		7U/5Fl2KmtuIFIfdiWJaTI2871s=
+		/5WC9OHQp5JQRIuCULNQxp4ee60=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		PPfAfhDhmvkChkQMgt/F6UiX6J8=
+		oYZQAIDAdmXed/ld2+s/U293sPE=
 		</data>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		aQ8qifL7nukDAOMz63IkCIqbSWs=
+		qNFWs/5v9WcXLZOf7YmBpONltFE=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-BYZ-38-t0r.nib</key>
 		<data>
-		PMUXJPh3OqmIv6QBCT5E82L6JV0=
+		IfeqsHCRd4WCanPvli3B35MVmo0=
 		</data>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<data>
@@ -106,7 +106,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WUYvZkDrsGxTey3zGXymna/9nV8=
+		yqY22AM2JRzG5EoBiVOXCxV3XiM=
+		</data>
+		<key>Mouth.xml</key>
+		<data>
+		yJaxo7pI8FEnRCaoOp589T0DfsY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -114,7 +118,23 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		ZAAfrgks9KpatAY1ohAErqX79eQ=
+		6Y2GdDItrREEphH406srpnTpGtI=
+		</data>
+		<key>eye.xml</key>
+		<data>
+		AcGktJUPWgCkqFg4Zk0dAsylNaM=
+		</data>
+		<key>face.xml</key>
+		<data>
+		cTXBiA4WdJOnuNgCxoSasEhDNB4=
+		</data>
+		<key>le.xml</key>
+		<data>
+		GPqzifIEkKx66+QPOfmRx80OQ+w=
+		</data>
+		<key>lefteye.xml</key>
+		<data>
+		D16ZIQ0JuZ04O9+rhMQwIKTfEOY=
 		</data>
 		<key>libswiftRemoteMirror.dylib</key>
 		<data>
@@ -123,6 +143,18 @@
 		<key>nose.xml</key>
 		<data>
 		UPEMhuhWumgl9lHU/eY5eNAE+Dk=
+		</data>
+		<key>re.xml</key>
+		<data>
+		hnNh6OUC8MPQEFqaCLfWKv2HF7I=
+		</data>
+		<key>righteye.xml</key>
+		<data>
+		pPvlK+At+Ff/n7W/Zly4y47HHYI=
+		</data>
+		<key>smile.xml</key>
+		<data>
+		IDA+IGZKQEuF4S2MMzdTl+U64EM=
 		</data>
 		<key>smu-campus.jpg</key>
 		<data>
@@ -135,11 +167,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7U/5Fl2KmtuIFIfdiWJaTI2871s=
+			/5WC9OHQp5JQRIuCULNQxp4ee60=
 			</data>
 			<key>hash2</key>
 			<data>
-			otTzKI+lQDZa/X0IRgYSCx9TZ+ZZ8DEF1QLnT2Wjmrg=
+			SZ2ZDMXamwtDelfjrgECURpgsLjq550SfGw9g/EF/cg=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -157,22 +189,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PPfAfhDhmvkChkQMgt/F6UiX6J8=
+			oYZQAIDAdmXed/ld2+s/U293sPE=
 			</data>
 			<key>hash2</key>
 			<data>
-			9kihxEaA+GF7zuSkKKYWDdjZtvzMNE5mmzXHI+EOU3s=
+			RpXdvEI1aZo4UN4oRfl+vFPtlaSetMRkyPbiOWY7hTA=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aQ8qifL7nukDAOMz63IkCIqbSWs=
+			qNFWs/5v9WcXLZOf7YmBpONltFE=
 			</data>
 			<key>hash2</key>
 			<data>
-			8YXtXKVE03rZopzhT8e2zdwJUMxJmNOvtc+TGHwtF44=
+			oB/S16AxDN2XctbtzoZygtXecxA5F/so3RaGistXEeU=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
@@ -190,11 +222,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PMUXJPh3OqmIv6QBCT5E82L6JV0=
+			IfeqsHCRd4WCanPvli3B35MVmo0=
 			</data>
 			<key>hash2</key>
 			<data>
-			RLESwy54/NsnCfN9UL+lzWo2sZsKnXqkcj5VGGWXIHU=
+			vzHpGve/B27fTuw+UXNKMvPVD07xNAbxuN7tm/OVxZU=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
@@ -406,15 +438,70 @@
 			ebmwUhQlDohrWJJDauEiMdyn3csJuNIaCSk16SYx59k=
 			</data>
 		</dict>
+		<key>Mouth.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yJaxo7pI8FEnRCaoOp589T0DfsY=
+			</data>
+			<key>hash2</key>
+			<data>
+			cMD25jNA3gHvT/XcjResg59+2HhBd5yHAsu03pd08zk=
+			</data>
+		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZAAfrgks9KpatAY1ohAErqX79eQ=
+			6Y2GdDItrREEphH406srpnTpGtI=
 			</data>
 			<key>hash2</key>
 			<data>
-			wT2IfetoBHNQre+7NCv1PbcxeTCIQUqvJlG0f008oNs=
+			a2M8eo+G5p7GEqv5GEsaGk9X4TUpax3BT0ifl5B8Hrk=
+			</data>
+		</dict>
+		<key>eye.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AcGktJUPWgCkqFg4Zk0dAsylNaM=
+			</data>
+			<key>hash2</key>
+			<data>
+			ccxk/DBaNV3GAGeID2+71D3RVb1j7jhEZhob2jSy/Yw=
+			</data>
+		</dict>
+		<key>face.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cTXBiA4WdJOnuNgCxoSasEhDNB4=
+			</data>
+			<key>hash2</key>
+			<data>
+			D31FJ4ROtRTUpJSOgi2pD7sWo0oLu7xq3GSYdHpar7A=
+			</data>
+		</dict>
+		<key>le.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GPqzifIEkKx66+QPOfmRx80OQ+w=
+			</data>
+			<key>hash2</key>
+			<data>
+			nDE0N15xpQMOC1obJ8pVfB8n3regaq4OQKayCmqpxgM=
+			</data>
+		</dict>
+		<key>lefteye.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			D16ZIQ0JuZ04O9+rhMQwIKTfEOY=
+			</data>
+			<key>hash2</key>
+			<data>
+			dMMjx4yBR1/JFY+sv7hmuwzKBr5B9XHfR9SsjQH5zkw=
 			</data>
 		</dict>
 		<key>libswiftRemoteMirror.dylib</key>
@@ -437,6 +524,39 @@
 			<key>hash2</key>
 			<data>
 			L/ZGg70vSVR+ZOAGNhB0R0btFACCx6j39m/cu2ZHE7w=
+			</data>
+		</dict>
+		<key>re.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hnNh6OUC8MPQEFqaCLfWKv2HF7I=
+			</data>
+			<key>hash2</key>
+			<data>
+			lpyS/CwL11cjJdHOV/CA4cCg2Omj8dOaX8LANemabcY=
+			</data>
+		</dict>
+		<key>righteye.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pPvlK+At+Ff/n7W/Zly4y47HHYI=
+			</data>
+			<key>hash2</key>
+			<data>
+			TPDXK+pzB+mvfrmdSsvhXXEBpnwi/Nz77v1pKtN893Y=
+			</data>
+		</dict>
+		<key>smile.xml</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IDA+IGZKQEuF4S2MMzdTl+U64EM=
+			</data>
+			<key>hash2</key>
+			<data>
+			TKHzBOq9C1rjAYDIGstT4Walhn5b4Xsxa9PzLP34fYo=
 			</data>
 		</dict>
 		<key>smu-campus.jpg</key>

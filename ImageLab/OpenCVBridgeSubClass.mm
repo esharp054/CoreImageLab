@@ -11,7 +11,7 @@
 #import "AVFoundation/AVFoundation.h"
 
 
-#define ARRAY_SIZE 100
+#define ARRAY_SIZE 150
 
 
 using namespace cv;
@@ -122,20 +122,11 @@ using namespace cv;
             currentTime = [NSDate date];
             timeSum += -tempTimeInterval;
             
-            //     Only when avgRed array is full, set timePerFrame
+            //Only when avgRed array is full, set timePerFrame
             if(self.counter == ARRAY_SIZE - 1){
                 self.timeInterval = timeSum;
                 timeSum = 0.0;
             }
-            
-            // Get timing information for bpm
-            // FPS = 120, Frames = 150 (due to this being Array Size, this is how many Frames we are looking at)
-            
-            
-//            cv::Mat frame_gray,image_copy;
-//            char text[50];
-//            Scalar avgPixelIntensity;
-//            cv::Mat image = self.image;
             
             cvtColor(image, image_copy, CV_BGRA2BGR); // get rid of alpha for processing
             avgPixelIntensity = cv::mean( image_copy );
@@ -143,7 +134,7 @@ using namespace cv;
             cv::putText(image, text, cv::Point(60, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
             
             // Get sample of data when camera is covered for analysis
-            if( avgPixelIntensity.val[2] < 30){ // If covered
+            if( avgPixelIntensity.val[2] < 60){ // If covered
                 // Display bpm if set
                 if(self.bpm != 0.0){
                     sprintf(text,"BPM: %.0f", self.bpm);
@@ -297,7 +288,7 @@ using namespace cv;
 //    int window = 5;
     
     // Find out how many time intervals fit in 60 seconds
-    float perMinute = 60 / self.timeInterval;
+    float perMinute = (60 / self.timeInterval);
     
     //If array is full, analyze current data and reset cosunter
     if (self.counter >= ARRAY_SIZE) {
@@ -305,18 +296,24 @@ using namespace cv;
         // Find all maximums
         NSMutableArray *localMax = [[NSMutableArray alloc] init];
         
-        // Counter starts at 0, get the middle value of 5
+        // Counter starts at 0, get the middle value of 7
         for (int i = 2; i < ARRAY_SIZE; i++){
             //Check if current point is a maximum
-            if(self.avgRed[i] > self.avgRed[i-1] && self.avgRed[i] > self.avgRed[i-2] && self.avgRed[i] > self.avgRed[i+1] && self.avgRed[i] > self.avgRed[i+2])
+            if(self.avgRed[i] > self.avgRed[i-1] && self.avgRed[i] > self.avgRed[i-2] && self.avgRed[i] > self.avgRed[i+1] && self.avgRed[i] > self.avgRed[i+1] && self.avgRed[i] > self.avgRed[i+2])
                 // add to peaks array
-                [localMax addObject:[NSNumber numberWithInt:i]];
+//                [localMax addObject:[NSNumber numberWithFloat:self.avgRed[i]]];
+                 [localMax addObject:[NSNumber numberWithInt:i]];
+        }
+        
+        for (int i = 0; i < localMax.count; i++){
+            NSLog(@" %d ", [localMax[i] intValue]);
         }
         
         NSUInteger numBeats = localMax.count;
         self.bpm = (float)numBeats * perMinute;
         NSLog(@"TimeInterval:  %f    NumBeats: %d    BPM: %f", self.timeInterval, (int) numBeats, self.bpm);
         
+        // Reset counter for next set of data
         self.counter = 0;
     }
     
