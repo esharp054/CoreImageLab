@@ -34,7 +34,7 @@ class ViewController: UIViewController   {
         self.bridge.loadHaarCascade(withFilename: "face")
         
         self.videoManager = VideoAnalgesic.sharedInstance
-        self.videoManager.setCameraPosition(position: AVCaptureDevice.Position.front)
+        self.videoManager.setCameraPosition(position: AVCaptureDevice.Position.back)
         
         // create dictionary for face detection
         // HINT: you need to manipulate these proerties for better face detection efficiency
@@ -91,14 +91,14 @@ class ViewController: UIViewController   {
 //            DispatchQueue.main.async(){
 //                self.cameraLabel.isEnabled = false;
 //                self.flashLabel.isEnabled = false;
-//                self.videoManager.turnOnFlashwithLevel(1);
+//                //self.videoManager.turnOnFlashwithLevel(1);
 //            }
 //        }else {
-//            DispatchQueue.main.async(){
-//                self.cameraLabel.isEnabled = true;
-//                self.flashLabel.isEnabled = true;
-//                self.videoManager.turnOffFlash();
-//            }
+////            DispatchQueue.main.async(){
+////                self.cameraLabel.isEnabled = true;
+////                self.flashLabel.isEnabled = true;
+////                self.videoManager.turnOffFlash();
+//            //}
 //        }
         
         return retImage
