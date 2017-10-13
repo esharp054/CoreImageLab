@@ -56,10 +56,10 @@ class ViewController: UIViewController   {
     //MARK: Process image output
     func processImage(inputImage:CIImage) -> CIImage{
         
-        // detect faces
-        let f = getFaces(img: inputImage)
-        
-        // if no faces, just return original image
+//        // detect faces
+//        let f = getFaces(img: inputImage)
+//
+//         //if no faces, just return original image
 //        if f.count == 0 { return inputImage }
         
         var retImage = inputImage
