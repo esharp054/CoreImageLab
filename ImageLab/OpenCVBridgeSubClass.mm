@@ -23,96 +23,48 @@ using namespace cv;
 @property (nonatomic) int counter;
 @property (nonatomic) bool displayText;
 @property (nonatomic) bool cameraCover;
+@property (atomic) cv::CascadeClassifier classifier;
 @end
 
 @implementation OpenCVBridgeSubClass
 @dynamic image;
 //@dynamic just tells the compiler that the getter and setter methods are implemented not by the class itself but somewhere else (like the superclass or will be provided at runtime).
 
--(float*) avgBlue {
-    if(!_avgBlue){
-        _avgBlue = (float*)malloc(sizeof(float)*ARRAY_SIZE);
-    }
-
-    return _avgBlue;
-}
--(float*) avgRed {
-    if(!_avgRed){
-        _avgRed = (float*)malloc(sizeof(float)*ARRAY_SIZE);
-    }
-    
-    return _avgRed;
-}
--(float*) avgGreen {
-    if(!_avgGreen){
-        _avgGreen = (float*)malloc(sizeof(float)*ARRAY_SIZE);
-    }
-    
-    return _avgGreen;
-}
--(void) dealloc {
-    free(self.avgBlue);
-    free(self.avgRed);
-    free(self.avgGreen);
-}
-
--(int) counter {
-    if(!_counter){
-        _counter = 0;
-    }
-    
-    return _counter;
-}
-
--(bool) displayText {
-    if(!_displayText){
-        _displayText = false;
-    }
-    
-    return _displayText;
-}
--(bool) cameraCover {
-    if(!_cameraCover){
-        _cameraCover = false;
-    }
-    
-    return _cameraCover;
-}
 
 -(void)processImage{
     
     cv::Mat frame_gray,image_copy;
-    char text[50];
     Scalar avgPixelIntensity;
     cv::Mat image = self.image;
-//    float* avgBlue = (float*)malloc(sizeof(float)*ARRAY_SIZE);
-//    float* avgRed = (float*)malloc(sizeof(float)*ARRAY_SIZE);
-//    float* avgGreen = (float*)malloc(sizeof(float)*ARRAY_SIZE);
-//    int counter = 0;
-//    bool displayText = false;
-    
-    cvtColor(image, image_copy, CV_BGRA2BGR); // get rid of alpha for processing
-    avgPixelIntensity = cv::mean( image_copy );
-    sprintf(text,"Avg. B: %.0f, G: %.0f, R: %.0f", avgPixelIntensity.val[0],avgPixelIntensity.val[1],avgPixelIntensity.val[2]);
-    cv::putText(image, text, cv::Point(60, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
-    if( avgPixelIntensity.val[2] < 22){ // If covered
-        self.cameraCover = true;
-        self.avgGreen[self.counter] = avgPixelIntensity.val[1];
-        self.avgBlue[self.counter] = avgPixelIntensity.val[0];
-        self.avgRed[self.counter] = avgPixelIntensity.val[2];
-        self.counter++;
-        if(self.counter >= 100){
-            self.displayText = true;
-            self.counter = 0;
+    switch (self.processType) {
+        case 1:
+        {
+            cvtColor(image, image_copy, CV_BGRA2GRAY);
+            vector<cv::Rect> objects;
+            
+            // run classifier
+            // error if this is not set!
+            self.classifier.detectMultiScale(image_copy, objects);
+            
+            // display bounding rectangles around the detected objects
+            for( vector<cv::Rect>::const_iterator r = objects.begin(); r != objects.end(); r++)
+            {
+                cv::rectangle( image, cvPoint( r->x, r->y ), cvPoint( r->x + r->width, r->y + r->height ), Scalar(0,0,255,255));
+            }
+            //image already in the correct color space
+            
+            self.image = image;
+            break;
         }
-        if(self.displayText){
-            NSLog(@"Buffer is full/n");
+        case 2:
+        {
+            self.image = image;
+            break;
         }
-    }else{
-        self.cameraCover = false;
+            
+        default:
+            break;
     }
-
-    self.image = image;
     
 }
 

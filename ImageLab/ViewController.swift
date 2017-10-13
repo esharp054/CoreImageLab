@@ -31,10 +31,10 @@ class ViewController: UIViewController   {
         self.view.backgroundColor = nil
         self.setupFilters()
         
-        self.bridge.loadHaarCascade(withFilename: "nose")
+        self.bridge.loadHaarCascade(withFilename: "face")
         
         self.videoManager = VideoAnalgesic.sharedInstance
-        self.videoManager.setCameraPosition(position: AVCaptureDevice.Position.back)
+        self.videoManager.setCameraPosition(position: AVCaptureDevice.Position.front)
         
         // create dictionary for face detection
         // HINT: you need to manipulate these proerties for better face detection efficiency
@@ -87,19 +87,19 @@ class ViewController: UIViewController   {
         
         self.bridge.processImage()
         retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
-        if(self.bridge.cameraCover()){
-            DispatchQueue.main.async(){
-                self.cameraLabel.isEnabled = false;
-                self.flashLabel.isEnabled = false;
-                self.videoManager.turnOnFlashwithLevel(1);
-            }
-        }else {
-            DispatchQueue.main.async(){
-                self.cameraLabel.isEnabled = true;
-                self.flashLabel.isEnabled = true;
-                self.videoManager.turnOffFlash();
-            }
-        }
+//        if(self.bridge.cameraCover()){
+//            DispatchQueue.main.async(){
+//                self.cameraLabel.isEnabled = false;
+//                self.flashLabel.isEnabled = false;
+//                self.videoManager.turnOnFlashwithLevel(1);
+//            }
+//        }else {
+//            DispatchQueue.main.async(){
+//                self.cameraLabel.isEnabled = true;
+//                self.flashLabel.isEnabled = true;
+//                self.videoManager.turnOffFlash();
+//            }
+//        }
         
         return retImage
     }
