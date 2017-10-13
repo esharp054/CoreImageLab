@@ -1,7 +1,7 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
-options: "dab8d221480f5776a9ee7b14329eb710"
-build_time: [1507045603, 909973000]
+options: "7cf8ab34010ba2277a495ee44ea547cb"
+build_time: [1507928952, 776449000]
 inputs:
-  "/Users/esharp2/MobileSensing/ImageLab/ImageDSPUtils/VideoAnalgesic.swift": [1507000371, 0]
-  "/Users/esharp2/MobileSensing/ImageLab/ImageLab/ViewController.swift": [1507045601, 0]
-  "/Users/esharp2/MobileSensing/ImageLab/ImageLab/AppDelegate.swift": [1507000283, 0]
+  "/Users/esharp2/MobileSensing/CoreImageLab/ImageDSPUtils/VideoAnalgesic.swift": [1507000371, 0]
+  "/Users/esharp2/MobileSensing/CoreImageLab/ImageLab/ViewController.swift": [1507928876, 0]
+  "/Users/esharp2/MobileSensing/CoreImageLab/ImageLab/AppDelegate.swift": [1507000283, 0]

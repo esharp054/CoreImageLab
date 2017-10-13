@@ -31,14 +31,14 @@ class ViewController: UIViewController   {
         self.view.backgroundColor = nil
         self.setupFilters()
         
-        self.bridge.loadHaarCascade(withFilename: "nose")
+        self.bridge.loadHaarCascade(withFilename: "face")
         
         self.videoManager = VideoAnalgesic.sharedInstance
         self.videoManager.setCameraPosition(position: AVCaptureDevice.Position.back)
         
         // create dictionary for face detection
         // HINT: you need to manipulate these proerties for better face detection efficiency
-        let optsDetector = [CIDetectorAccuracy:CIDetectorAccuracyLow,CIDetectorTracking:true] as [String : Any]
+        let optsDetector = [CIDetectorAccuracy:CIDetectorAccuracyHigh,CIDetectorTracking:true] as [String : Any]
         
         // setup a face detector in swift
         self.detector = CIDetector(ofType: CIDetectorTypeFace,
@@ -56,10 +56,10 @@ class ViewController: UIViewController   {
     //MARK: Process image output
     func processImage(inputImage:CIImage) -> CIImage{
         
-        // detect faces
-        let f = getFaces(img: inputImage)
-        
-        // if no faces, just return original image
+//        // detect faces
+//        let f = getFaces(img: inputImage)
+//
+//         //if no faces, just return original image
 //        if f.count == 0 { return inputImage }
         
         var retImage = inputImage
@@ -87,19 +87,19 @@ class ViewController: UIViewController   {
         
         self.bridge.processImage()
         retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
-        if(self.bridge.cameraCover()){
-            DispatchQueue.main.async(){
-                self.cameraLabel.isEnabled = false;
-                self.flashLabel.isEnabled = false;
-                self.videoManager.turnOnFlashwithLevel(1);
-            }
-        }else {
-            DispatchQueue.main.async(){
-                self.cameraLabel.isEnabled = true;
-                self.flashLabel.isEnabled = true;
-                self.videoManager.turnOffFlash();
-            }
-        }
+//        if(self.bridge.cameraCover()){
+//            DispatchQueue.main.async(){
+//                self.cameraLabel.isEnabled = false;
+//                self.flashLabel.isEnabled = false;
+//                //self.videoManager.turnOnFlashwithLevel(1);
+//            }
+//        }else {
+////            DispatchQueue.main.async(){
+////                self.cameraLabel.isEnabled = true;
+////                self.flashLabel.isEnabled = true;
+////                self.videoManager.turnOffFlash();
+//            //}
+//        }
         
         return retImage
     }

@@ -20,6 +20,14 @@
 		B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */; };
 		B67B72BF1D99D0AD008EDDE1 /* nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = B67B72BE1D99D0AD008EDDE1 /* nose.xml */; };
 		B6E657991D95AA4500E75C60 /* VideoAnalgesic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */; };
+		F7B245F21F910484005FE58B /* face.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F11F910484005FE58B /* face.xml */; };
+		F7B245F51F910750005FE58B /* smile.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F31F91074F005FE58B /* smile.xml */; };
+		F7B245F61F910750005FE58B /* eye.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F41F91074F005FE58B /* eye.xml */; };
+		F7B245F81F910E82005FE58B /* Mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F71F910E82005FE58B /* Mouth.xml */; };
+		F7B245FA1F912752005FE58B /* lefteye.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F91F912752005FE58B /* lefteye.xml */; };
+		F7B245FC1F912767005FE58B /* righteye.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245FB1F912767005FE58B /* righteye.xml */; };
+		F7B245FF1F912CB5005FE58B /* le.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245FD1F912CB4005FE58B /* le.xml */; };
+		F7B246001F912CB5005FE58B /* re.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245FE1F912CB4005FE58B /* re.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +71,14 @@
 		B67B72BE1D99D0AD008EDDE1 /* nose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nose.xml; sourceTree = SOURCE_ROOT; };
 		B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoAnalgesic.swift; path = ImageDSPUtils/VideoAnalgesic.swift; sourceTree = SOURCE_ROOT; };
 		B6EF2FD91F7A906A00C33387 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F7B245F11F910484005FE58B /* face.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = face.xml; sourceTree = SOURCE_ROOT; };
+		F7B245F31F91074F005FE58B /* smile.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = smile.xml; sourceTree = SOURCE_ROOT; };
+		F7B245F41F91074F005FE58B /* eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = eye.xml; sourceTree = SOURCE_ROOT; };
+		F7B245F71F910E82005FE58B /* Mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mouth.xml; sourceTree = SOURCE_ROOT; };
+		F7B245F91F912752005FE58B /* lefteye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lefteye.xml; sourceTree = SOURCE_ROOT; };
+		F7B245FB1F912767005FE58B /* righteye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = righteye.xml; sourceTree = SOURCE_ROOT; };
+		F7B245FD1F912CB4005FE58B /* le.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = le.xml; sourceTree = SOURCE_ROOT; };
+		F7B245FE1F912CB4005FE58B /* re.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = re.xml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +140,14 @@
 				B650B3261D8340F0000114A1 /* Info.plist */,
 				B650B34D1D834D46000114A1 /* smu-campus.jpg */,
 				B67B72BE1D99D0AD008EDDE1 /* nose.xml */,
+				F7B245F11F910484005FE58B /* face.xml */,
+				F7B245F91F912752005FE58B /* lefteye.xml */,
+				F7B245F71F910E82005FE58B /* Mouth.xml */,
+				F7B245FD1F912CB4005FE58B /* le.xml */,
+				F7B245FE1F912CB4005FE58B /* re.xml */,
+				F7B245FB1F912767005FE58B /* righteye.xml */,
+				F7B245F41F91074F005FE58B /* eye.xml */,
+				F7B245F31F91074F005FE58B /* smile.xml */,
 				B6EF2FD91F7A906A00C33387 /* PrefixHeader.pch */,
 			);
 			path = ImageLab;
@@ -266,8 +290,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B246001F912CB5005FE58B /* re.xml in Resources */,
+				F7B245FA1F912752005FE58B /* lefteye.xml in Resources */,
+				F7B245F81F910E82005FE58B /* Mouth.xml in Resources */,
+				F7B245F21F910484005FE58B /* face.xml in Resources */,
+				F7B245F61F910750005FE58B /* eye.xml in Resources */,
 				B650B34E1D834D46000114A1 /* smu-campus.jpg in Resources */,
+				F7B245F51F910750005FE58B /* smile.xml in Resources */,
+				F7B245FF1F912CB5005FE58B /* le.xml in Resources */,
 				B67B72BF1D99D0AD008EDDE1 /* nose.xml in Resources */,
+				F7B245FC1F912767005FE58B /* righteye.xml in Resources */,
 				B650B3251D8340F0000114A1 /* LaunchScreen.storyboard in Resources */,
 				B650B3221D8340F0000114A1 /* Assets.xcassets in Resources */,
 				B650B3201D8340F0000114A1 /* Main.storyboard in Resources */,
@@ -470,7 +502,7 @@
 				INFOPLIST_FILE = ImageLab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "SMU-ImageLab";
+				PRODUCT_BUNDLE_IDENTIFIER = CoreImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ImageLab/ImageLab-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -491,7 +523,7 @@
 				INFOPLIST_FILE = ImageLab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "SMU-ImageLab";
+				PRODUCT_BUNDLE_IDENTIFIER = CoreImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ImageLab/ImageLab-Bridging-Header.h";
 			};
