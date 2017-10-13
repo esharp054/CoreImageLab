@@ -109,6 +109,26 @@ using namespace cv;
     Scalar avgPixelIntensity;
     cv::Mat image = self.image;
     
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"face" ofType:@"xml"];
+    self.faceClassifier = cv::CascadeClassifier([filePath UTF8String]);
+    
+    NSString *filePath1 = [[NSBundle mainBundle] pathForResource:@"eye" ofType:@"xml"];
+    self.eyesClassifier = cv::CascadeClassifier([filePath1 UTF8String]);
+    
+    NSString *filePath2 = [[NSBundle mainBundle] pathForResource:@"Mouth" ofType:@"xml"];
+    self.mouthClassifier = cv::CascadeClassifier([filePath2 UTF8String]);
+    
+    NSString *filePath3 = [[NSBundle mainBundle] pathForResource:@"lefteye" ofType:@"xml"];
+    self.leftEyesClassifier = cv::CascadeClassifier([filePath3 UTF8String]);
+    
+    NSString *filePath4 = [[NSBundle mainBundle] pathForResource:@"righteye" ofType:@"xml"];
+    self.rightEyesClassifier = cv::CascadeClassifier([filePath4 UTF8String]);
+    
+    NSString *filePath5 = [[NSBundle mainBundle] pathForResource:@"eye" ofType:@"xml"];
+    self.eyesClassifier = cv::CascadeClassifier([filePath5 UTF8String]);
+    
+    
+    
     switch (self.processType) {
         
         case 0:
@@ -131,11 +151,6 @@ using namespace cv;
             // Get timing information for bpm
             // FPS = 120, Frames = 150 (due to this being Array Size, this is how many Frames we are looking at)
             
-            
-//            cv::Mat frame_gray,image_copy;
-//            char text[50];
-//            Scalar avgPixelIntensity;
-//            cv::Mat image = self.image;
             
             cvtColor(image, image_copy, CV_BGRA2BGR); // get rid of alpha for processing
             avgPixelIntensity = cv::mean( image_copy );
@@ -171,8 +186,6 @@ using namespace cv;
         }
         case 1:
         {
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:@"face" ofType:@"xml"];
-            self.faceClassifier = cv::CascadeClassifier([filePath UTF8String]);
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
             vector<cv::Rect> objects;
@@ -193,9 +206,7 @@ using namespace cv;
         }
         case 2:
         {
-            
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eye" ofType:@"xml"];
-            self.eyesClassifier = cv::CascadeClassifier([filePath UTF8String]);
+        
             int minNeighbors = 3;
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
@@ -216,9 +227,6 @@ using namespace cv;
         }
         case 3:
         {
-            
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Mouth" ofType:@"xml"];
-            self.mouthClassifier = cv::CascadeClassifier([filePath UTF8String]);
             int minNeighbors = 5;
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
@@ -226,7 +234,7 @@ using namespace cv;
             
             // run classifier
             // error if this is not set!
-            self.mouthClassifier.detectMultiScale(image_copy, objects, minNeighbors);
+            self.mouthClassifier.detectMultiScale(image_copy, objects, 3, minNeighbors);
             
             // display bounding rectangles around the detected objects
             for( vector<cv::Rect>::const_iterator r = objects.begin(); r != objects.end(); r++)
@@ -239,16 +247,8 @@ using namespace cv;
         }
         case 4:
         {
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:@"lefteye" ofType:@"xml"];
-            self.leftEyesClassifier = cv::CascadeClassifier([filePath UTF8String]);
             
-            NSString *filePath2 = [[NSBundle mainBundle] pathForResource:@"righteye" ofType:@"xml"];
-            self.rightEyesClassifier = cv::CascadeClassifier([filePath2 UTF8String]);
-            
-            NSString *filePath3 = [[NSBundle mainBundle] pathForResource:@"eye" ofType:@"xml"];
-            self.eyesClassifier = cv::CascadeClassifier([filePath3 UTF8String]);
-            
-            int minNeighbors = 4;
+            int minNeighbors = 3;
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
             vector<cv::Rect> re;
@@ -258,20 +258,25 @@ using namespace cv;
             
             // run classifier
             // error if this is not set!
-            self.leftEyesClassifier.detectMultiScale(image_copy, le, minNeighbors);
-            self.rightEyesClassifier.detectMultiScale(image_copy, re, minNeighbors);
-            self.eyesClassifier.detectMultiScale(image_copy, e, minNeighbors);
+            self.leftEyesClassifier.detectMultiScale(image_copy, le,3, minNeighbors);
+            self.rightEyesClassifier.detectMultiScale(image_copy, re,3, minNeighbors);
+            self.eyesClassifier.detectMultiScale(image_copy, e, 3,minNeighbors);
             
-            if (re.size() > 0 && e.size() < 2){
+            if (e.size() == 2){
+                sprintf(text,"Both eyes open");
+                cv::putText(image, text, cv::Point(60, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
+            }
+            
+            else if (re.size() == 1 && e.size() == 1){
                 sprintf(text,"left eye blinking");
                 cv::putText(image, text, cv::Point(60, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
             }
-            else if (le.size() > 0 && e.size() < 2){
+            else if (le.size() == 1 && e.size() == 1){
                 sprintf(text,"right eye blinking");
                 cv::putText(image, text, cv::Point(120, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
             }
             
-            else if (e.size() == 0){
+            else if (e.size() == 0 ){
                 sprintf(text,"Both eyes blinking");
                 cv::putText(image, text, cv::Point(60, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
             }
@@ -306,9 +311,11 @@ using namespace cv;
         NSMutableArray *localMax = [[NSMutableArray alloc] init];
         
         // Counter starts at 0, get the middle value of 5
-        for (int i = 2; i < ARRAY_SIZE; i++){
+//        for (int i = 2; i < ARRAY_SIZE; i++){
+        for (int i = 1; i < ARRAY_SIZE; i++){
             //Check if current point is a maximum
-            if(self.avgRed[i] > self.avgRed[i-1] && self.avgRed[i] > self.avgRed[i-2] && self.avgRed[i] > self.avgRed[i+1] && self.avgRed[i] > self.avgRed[i+2])
+//            if(self.avgRed[i] > self.avgRed[i-1] && self.avgRed[i] > self.avgRed[i-2] && self.avgRed[i] > self.avgRed[i+1] && self.avgRed[i] > self.avgRed[i+2])
+            if(self.avgRed[i] > self.avgRed[i-1] && self.avgRed[i] > self.avgRed[i+1])
                 // add to peaks array
                 [localMax addObject:[NSNumber numberWithInt:i]];
         }

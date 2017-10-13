@@ -38,7 +38,7 @@ class ViewController: UIViewController   {
         
         // create dictionary for face detection
         // HINT: you need to manipulate these proerties for better face detection efficiency
-        let optsDetector = [CIDetectorAccuracy:CIDetectorAccuracyLow,CIDetectorTracking:true] as [String : Any]
+        let optsDetector = [CIDetectorAccuracy:CIDetectorAccuracyHigh,CIDetectorTracking:true] as [String : Any]
         
         // setup a face detector in swift
         self.detector = CIDetector(ofType: CIDetectorTypeFace,
@@ -56,10 +56,10 @@ class ViewController: UIViewController   {
     //MARK: Process image output
     func processImage(inputImage:CIImage) -> CIImage{
         
-        // detect faces
-        let f = getFaces(img: inputImage)
-        
-        // if no faces, just return original image
+//        // detect faces
+//        let f = getFaces(img: inputImage)
+//
+//         //if no faces, just return original image
 //        if f.count == 0 { return inputImage }
         
         var retImage = inputImage
