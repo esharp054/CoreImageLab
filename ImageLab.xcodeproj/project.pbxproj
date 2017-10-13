@@ -116,6 +116,8 @@
 		B650B3191D8340F0000114A1 /* ImageLab */ = {
 			isa = PBXGroup;
 			children = (
+				525C594E1F83D85800837C3E /* OpenCVBridgeSubClass.mm */,
+				525C59501F83D90200837C3E /* OpenCVBridgeSubClass.h */,
 				B650B31A1D8340F0000114A1 /* AppDelegate.swift */,
 				B650B31C1D8340F0000114A1 /* ViewController.swift */,
 				B650B31E1D8340F0000114A1 /* Main.storyboard */,
@@ -154,8 +156,6 @@
 				B67B72B91D996ADE008EDDE1 /* OpenCVBridge.hh */,
 				B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */,
 				B67B72B81D996ADC008EDDE1 /* ImageLab-Bridging-Header.h */,
-				525C594E1F83D85800837C3E /* OpenCVBridgeSubClass.mm */,
-				525C59501F83D90200837C3E /* OpenCVBridgeSubClass.h */,
 			);
 			name = ImageDSPUtils;
 			path = ImageLab;
