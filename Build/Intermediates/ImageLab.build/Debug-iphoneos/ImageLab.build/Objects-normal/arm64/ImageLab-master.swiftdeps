@@ -1,7 +1,8 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "7cf8ab34010ba2277a495ee44ea547cb"
-build_time: [1507853081, 550054000]
+build_time: [1507865018, 43405000]
 inputs:
   "/Users/esharp2/MobileSensing/CoreImageLab/ImageDSPUtils/VideoAnalgesic.swift": [1507000371, 0]
   "/Users/esharp2/MobileSensing/CoreImageLab/ImageLab/ViewController.swift": [1507045648, 0]
+  "/Users/esharp2/MobileSensing/CoreImageLab/ImageLab/HeartRateViewController.swift": [1507855934, 0]
   "/Users/esharp2/MobileSensing/CoreImageLab/ImageLab/AppDelegate.swift": [1507000283, 0]

@@ -195,6 +195,28 @@ SWIFT_CLASS("_TtC8ImageLab11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIButton;
+@class UISlider;
+@class UILabel;
+@class UISwipeGestureRecognizer;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC8ImageLab23HeartRateViewController")
+@interface HeartRateViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified flashLabel;
+@property (nonatomic, weak) IBOutlet UISlider * _Null_unspecified flashSlider;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified cameraLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified stageLabel;
+- (void)viewDidLoad;
+- (IBAction)swipeRecognized:(UISwipeGestureRecognizer * _Nonnull)sender;
+- (IBAction)flash:(id _Nonnull)sender;
+- (IBAction)switchCamera:(id _Nonnull)sender;
+- (IBAction)setFlashLevel:(UISlider * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class AVCaptureOutput;
 @class AVCaptureConnection;
 
@@ -205,12 +227,6 @@ SWIFT_CLASS("_TtC8ImageLab14VideoAnalgesic")
 - (void)captureOutput:(AVCaptureOutput * _Nonnull)captureOutput didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
 @end
 
-@class UIButton;
-@class UISlider;
-@class UILabel;
-@class UISwipeGestureRecognizer;
-@class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC8ImageLab14ViewController")
 @interface ViewController : UIViewController
