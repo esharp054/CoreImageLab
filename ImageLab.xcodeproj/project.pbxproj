@@ -23,6 +23,7 @@
 		F7B245F21F910484005FE58B /* face.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F11F910484005FE58B /* face.xml */; };
 		F7B245F51F910750005FE58B /* smile.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F31F91074F005FE58B /* smile.xml */; };
 		F7B245F61F910750005FE58B /* eye.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F41F91074F005FE58B /* eye.xml */; };
+		F7B245F81F910E82005FE58B /* Mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = F7B245F71F910E82005FE58B /* Mouth.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F7B245F11F910484005FE58B /* face.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = face.xml; sourceTree = SOURCE_ROOT; };
 		F7B245F31F91074F005FE58B /* smile.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = smile.xml; sourceTree = SOURCE_ROOT; };
 		F7B245F41F91074F005FE58B /* eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = eye.xml; sourceTree = SOURCE_ROOT; };
+		F7B245F71F910E82005FE58B /* Mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mouth.xml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				B650B34D1D834D46000114A1 /* smu-campus.jpg */,
 				B67B72BE1D99D0AD008EDDE1 /* nose.xml */,
 				F7B245F11F910484005FE58B /* face.xml */,
+				F7B245F71F910E82005FE58B /* Mouth.xml */,
 				F7B245F41F91074F005FE58B /* eye.xml */,
 				F7B245F31F91074F005FE58B /* smile.xml */,
 				B6EF2FD91F7A906A00C33387 /* PrefixHeader.pch */,
@@ -275,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B245F81F910E82005FE58B /* Mouth.xml in Resources */,
 				F7B245F21F910484005FE58B /* face.xml in Resources */,
 				F7B245F61F910750005FE58B /* eye.xml in Resources */,
 				B650B34E1D834D46000114A1 /* smu-campus.jpg in Resources */,
