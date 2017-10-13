@@ -39,6 +39,7 @@ using namespace cv;
     cv::Mat frame_gray,image_copy;
     Scalar avgPixelIntensity;
     cv::Mat image = self.image;
+    
     switch (self.processType) {
         case 1:
         {
@@ -67,13 +68,14 @@ using namespace cv;
             
             NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eye" ofType:@"xml"];
             self.eyesClassifier = cv::CascadeClassifier([filePath UTF8String]);
+            int minNeighbors = 3;
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
             vector<cv::Rect> objects;
             
             // run classifier
             // error if this is not set!
-            self.eyesClassifier.detectMultiScale(image_copy, objects);
+            self.eyesClassifier.detectMultiScale(image_copy, objects, minNeighbors);
             
             // display bounding rectangles around the detected objects
             for( vector<cv::Rect>::const_iterator r = objects.begin(); r != objects.end(); r++)
@@ -89,13 +91,14 @@ using namespace cv;
             
             NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Mouth" ofType:@"xml"];
             self.mouthClassifier = cv::CascadeClassifier([filePath UTF8String]);
+            int minNeighbors = 4;
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
             vector<cv::Rect> objects;
             
             // run classifier
             // error if this is not set!
-            self.mouthClassifier.detectMultiScale(image_copy, objects);
+            self.mouthClassifier.detectMultiScale(image_copy, objects, minNeighbors);
             
             // display bounding rectangles around the detected objects
             for( vector<cv::Rect>::const_iterator r = objects.begin(); r != objects.end(); r++)
@@ -114,10 +117,11 @@ using namespace cv;
             
             cvtColor(image, image_copy, CV_BGRA2GRAY);
             vector<cv::Rect> objects;
+            int minNeighbors = 4;
             
             // run classifier
             // error if this is not set!
-            self.smileClassifier.detectMultiScale(image_copy, objects);
+            self.smileClassifier.detectMultiScale(image_copy, objects, minNeighbors);
             
             // display bounding rectangles around the detected objects
             for( vector<cv::Rect>::const_iterator r = objects.begin(); r != objects.end(); r++)
